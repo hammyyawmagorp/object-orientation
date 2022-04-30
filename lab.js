@@ -99,7 +99,7 @@ var carDetails = {
 
 //Code Here
 
-let {color, make, model, year} = carDetails;
+let {color, make, model, year} = car;
 
 
 
@@ -113,7 +113,9 @@ let {color, make, model, year} = carDetails;
 
 function greeting( obj ) {
   //Code Here
-  let {firstName, lastName, title} = obj;
+  let {title, firstName, lastName} = obj;
+
+
 
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -133,11 +135,11 @@ function greeting( obj ) {
 */
 
 //Code Here
-// function totalPopulation(population){
-// }
-// let {utah, california, texas, arizona} = population;
+function totalPopulation(obj){
 
-
+let {utah, california, texas, arizona} = obj;
+return utah + california + texas + arizona;
+}
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
 /*
@@ -150,7 +152,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function ingredients (obj){
+  const {carb, fat, protein} = obj;
+  return [carb, fat, protein];
+}
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -202,7 +207,7 @@ class Cat {
   }
 }
 
-let snowflake = new Cat('Snowflake', 3, 'Orange');
+let snowflake = new Cat('Snowflake', 2, 'Orange');
 
 console.log(snowflake.color);
 
@@ -221,11 +226,15 @@ class Wizard {
     this.age = age;
     this.favoriteSpell = favoriteSpell;
   }
-}
-function castSpell(){
-  console.log(this.name, 'has cast', this.favoriteSpell);
+  castSpell(){
+    console.log(this.name, 'has cast', this.favoriteSpell);
+  }
+  
 }
 
+const hamal = new Wizard('hamal', 18, 'Hokus Pokus')
+
+hamal.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -264,7 +273,7 @@ function castSpell(){
 
   sell() {
      this.sold = true;
-     console.log(this.brand, this.model, 'has been sold.')
+     console.log(`${this.brand} ${this.model}, has been sold.`)
   }
   changePrice(newprice) {
     this.price = newprice;
@@ -307,6 +316,8 @@ console.log(pixel6.price);
 
 //Code Here 
 
+pixel6.sell();
+console.log(pixel6.sold);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -326,6 +337,7 @@ const colors = {
 
 //Code Here 
 
+let colorsCopy = {...colors};
 
 
 /*
@@ -355,8 +367,12 @@ const shippingInfo = {
 //Code Here
 
 
+let helensInfo = {...contactInfo, ...shippingInfo};
+
+
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
+console.log(helensInfo);
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
